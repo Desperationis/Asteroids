@@ -1,0 +1,26 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SpaceShooter.vcxproj, Template(Revised).vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  DeathSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\deathsystem\deathsystem.cpp(16): warning C4018: '<': signed/unsigned mismatch
+  BulletSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\bulletsystem\bulletsystem.cpp(52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\bulletsystem\bulletsystem.cpp(51): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  CollisionSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\collisionsystem\collisionsystem.cpp(93): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\collisionsystem\collisionsystem.cpp(93): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  EntityManager.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\entities\entitymanager.cpp(112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Game.cpp
+  main.cpp
+  stdafx.cpp
+  InputSystem.cpp
+  MeteorSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\meteorsystem\meteorsystem.cpp(7): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  MovementSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(102): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(103): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  RenderingSystem.cpp
+  ScoreSystem.cpp
+  TM.cpp
+  Generating Code...
+  Asteroids.vcxproj -> C:\Users\smart\Desktop\Asteroids\Asteroids  ( ECS V2 )\Debug\Asteroids.exe

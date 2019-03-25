@@ -1,0 +1,78 @@
+﻿  DeathSystem.cpp
+  BulletSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\bulletsystem\bulletsystem.cpp(52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\bulletsystem\bulletsystem.cpp(51): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  CollisionSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\collisionsystem\collisionsystem.cpp(93): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\collisionsystem\collisionsystem.cpp(93): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  EntityManager.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\entities\entitymanager.cpp(112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Game.cpp
+  main.cpp
+  stdafx.cpp
+  InputSystem.cpp
+  MeteorSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\meteorsystem\meteorsystem.cpp(7): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  MovementSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(102): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(103): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  RenderingSystem.cpp
+  ScoreSystem.cpp
+  TM.cpp
+  Generating Code...
+BulletSystem.obj : error LNK2019: unresolved external symbol SDL_GameControllerGetButton referenced in function "public: static short __cdecl InputSystem::GetButton(enum SDL_GameControllerButton)" (?GetButton@InputSystem@@SAFW4SDL_GameControllerButton@@@Z)
+EntityManager.obj : error LNK2001: unresolved external symbol SDL_GameControllerGetButton
+CollisionSystem.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawColor referenced in function "public: static void __cdecl CollisionSystem::renderRect(unsigned __int64 const &)" (?renderRect@CollisionSystem@@SAXAEB_K@Z)
+EntityManager.obj : error LNK2001: unresolved external symbol SDL_SetRenderDrawColor
+Game.obj : error LNK2001: unresolved external symbol SDL_SetRenderDrawColor
+RenderingSystem.obj : error LNK2001: unresolved external symbol SDL_SetRenderDrawColor
+CollisionSystem.obj : error LNK2019: unresolved external symbol SDL_RenderDrawRect referenced in function "public: static void __cdecl CollisionSystem::renderRect(unsigned __int64 const &)" (?renderRect@CollisionSystem@@SAXAEB_K@Z)
+RenderingSystem.obj : error LNK2001: unresolved external symbol SDL_RenderDrawRect
+EntityManager.obj : error LNK2019: unresolved external symbol SDL_NumJoysticks referenced in function "public: __cdecl InputSystem::InputSystem(void)" (??0InputSystem@@QEAA@XZ)
+EntityManager.obj : error LNK2019: unresolved external symbol SDL_IsGameController referenced in function "public: __cdecl InputSystem::InputSystem(void)" (??0InputSystem@@QEAA@XZ)
+EntityManager.obj : error LNK2019: unresolved external symbol SDL_GameControllerOpen referenced in function "public: __cdecl InputSystem::InputSystem(void)" (??0InputSystem@@QEAA@XZ)
+EntityManager.obj : error LNK2019: unresolved external symbol SDL_GameControllerName referenced in function "public: __cdecl InputSystem::InputSystem(void)" (??0InputSystem@@QEAA@XZ)
+EntityManager.obj : error LNK2019: unresolved external symbol SDL_GameControllerGetJoystick referenced in function "public: __cdecl InputSystem::InputSystem(void)" (??0InputSystem@@QEAA@XZ)
+EntityManager.obj : error LNK2019: unresolved external symbol SDL_GameControllerEventState referenced in function "public: __cdecl InputSystem::InputSystem(void)" (??0InputSystem@@QEAA@XZ)
+EntityManager.obj : error LNK2019: unresolved external symbol SDL_RenderFillRect referenced in function "public: void __cdecl EntityManager::render(void)" (?render@EntityManager@@QEAAXXZ)
+Game.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function "public: __cdecl Game::Game(char const *,int,int,unsigned int,int,int)" (??0Game@@QEAA@PEBDHHIHH@Z)
+Game.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "public: void __cdecl Game::events(void)" (?events@Game@@QEAAXXZ)
+Game.obj : error LNK2019: unresolved external symbol SDL_CreateRenderer referenced in function "public: __cdecl Game::Game(char const *,int,int,unsigned int,int,int)" (??0Game@@QEAA@PEBDHHIHH@Z)
+Game.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawBlendMode referenced in function "public: __cdecl Game::Game(char const *,int,int,unsigned int,int,int)" (??0Game@@QEAA@PEBDHHIHH@Z)
+Game.obj : error LNK2019: unresolved external symbol SDL_RenderClear referenced in function "public: void __cdecl Game::render(void)" (?render@Game@@QEAAXXZ)
+Game.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "public: void __cdecl Game::render(void)" (?render@Game@@QEAAXXZ)
+Game.obj : error LNK2019: unresolved external symbol SDL_GetTicks referenced in function "public: void __cdecl Game::update(void)" (?update@Game@@QEAAXXZ)
+main.obj : error LNK2001: unresolved external symbol SDL_GetTicks
+Game.obj : error LNK2019: unresolved external symbol SDL_Init referenced in function "public: __cdecl Game::Game(char const *,int,int,unsigned int,int,int)" (??0Game@@QEAA@PEBDHHIHH@Z)
+Game.obj : error LNK2019: unresolved external symbol SDL_Quit referenced in function "public: void __cdecl Game::clean(void)" (?clean@Game@@QEAAXXZ)
+Game.obj : error LNK2019: unresolved external symbol TTF_Init referenced in function "public: __cdecl Game::Game(char const *,int,int,unsigned int,int,int)" (??0Game@@QEAA@PEBDHHIHH@Z)
+Game.obj : error LNK2019: unresolved external symbol TTF_Quit referenced in function "public: void __cdecl Game::clean(void)" (?clean@Game@@QEAAXXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_Delay referenced in function SDL_main
+InputSystem.obj : error LNK2019: unresolved external symbol SDL_GetKeyboardState referenced in function "public: void __cdecl InputSystem::PumpEvents(void)" (?PumpEvents@InputSystem@@QEAAXXZ)
+InputSystem.obj : error LNK2019: unresolved external symbol SDL_GetMouseState referenced in function "public: void __cdecl InputSystem::PumpEvents(void)" (?PumpEvents@InputSystem@@QEAAXXZ)
+InputSystem.obj : error LNK2019: unresolved external symbol SDL_GameControllerGetAxis referenced in function "public: static short __cdecl InputSystem::GetAxis(enum SDL_GameControllerAxis)" (?GetAxis@InputSystem@@SAFW4SDL_GameControllerAxis@@@Z)
+InputSystem.obj : error LNK2019: unresolved external symbol SDL_PumpEvents referenced in function "public: void __cdecl InputSystem::PumpEvents(void)" (?PumpEvents@InputSystem@@QEAAXXZ)
+ScoreSystem.obj : error LNK2019: unresolved external symbol SDL_FreeSurface referenced in function "public: void __cdecl ScoreSystem::makeScore(unsigned __int64 &,unsigned __int64 &)" (?makeScore@ScoreSystem@@QEAAXAEA_K0@Z)
+TM.obj : error LNK2001: unresolved external symbol SDL_FreeSurface
+ScoreSystem.obj : error LNK2019: unresolved external symbol SDL_CreateTextureFromSurface referenced in function "public: void __cdecl ScoreSystem::makeScore(unsigned __int64 &,unsigned __int64 &)" (?makeScore@ScoreSystem@@QEAAXAEA_K0@Z)
+TM.obj : error LNK2001: unresolved external symbol SDL_CreateTextureFromSurface
+ScoreSystem.obj : error LNK2019: unresolved external symbol SDL_QueryTexture referenced in function "public: void __cdecl ScoreSystem::makeScore(unsigned __int64 &,unsigned __int64 &)" (?makeScore@ScoreSystem@@QEAAXAEA_K0@Z)
+ScoreSystem.obj : error LNK2019: unresolved external symbol SDL_DestroyTexture referenced in function "public: void __cdecl ScoreSystem::makeScore(unsigned __int64 &,unsigned __int64 &)" (?makeScore@ScoreSystem@@QEAAXAEA_K0@Z)
+ScoreSystem.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "public: __cdecl ScoreSystem::ScoreSystem(void)" (??0ScoreSystem@@QEAA@XZ)
+ScoreSystem.obj : error LNK2019: unresolved external symbol TTF_RenderText_Solid referenced in function "public: void __cdecl ScoreSystem::makeScore(unsigned __int64 &,unsigned __int64 &)" (?makeScore@ScoreSystem@@QEAAXAEA_K0@Z)
+TM.obj : error LNK2019: unresolved external symbol SDL_ConvertSurfaceFormat referenced in function "public: static struct SDL_Texture * __cdecl TM::LoadBWTexture(char const *)" (?LoadBWTexture@TM@@SAPEAUSDL_Texture@@PEBD@Z)
+TM.obj : error LNK2019: unresolved external symbol SDL_CreateTexture referenced in function "public: static struct SDL_Texture * __cdecl TM::LoadBWTexture(char const *)" (?LoadBWTexture@TM@@SAPEAUSDL_Texture@@PEBD@Z)
+TM.obj : error LNK2019: unresolved external symbol SDL_SetTextureColorMod referenced in function "public: static void __cdecl TM::SetColorMod(struct SDL_Texture * &,unsigned char,unsigned char,unsigned char)" (?SetColorMod@TM@@SAXAEAPEAUSDL_Texture@@EEE@Z)
+TM.obj : error LNK2019: unresolved external symbol SDL_SetTextureAlphaMod referenced in function "public: static void __cdecl TM::SetAlpha(struct SDL_Texture * &,unsigned char)" (?SetAlpha@TM@@SAXAEAPEAUSDL_Texture@@E@Z)
+TM.obj : error LNK2019: unresolved external symbol SDL_SetTextureBlendMode referenced in function "public: static void __cdecl TM::RemoveAlphaBlending(struct SDL_Texture * &)" (?RemoveAlphaBlending@TM@@SAXAEAPEAUSDL_Texture@@@Z)
+TM.obj : error LNK2019: unresolved external symbol SDL_UpdateTexture referenced in function "public: static struct SDL_Texture * __cdecl TM::LoadBWTexture(char const *)" (?LoadBWTexture@TM@@SAPEAUSDL_Texture@@PEBD@Z)
+TM.obj : error LNK2019: unresolved external symbol SDL_RenderCopy referenced in function "public: static void __cdecl TM::DrawTexture(struct SDL_Texture * &)" (?DrawTexture@TM@@SAXAEAPEAUSDL_Texture@@@Z)
+TM.obj : error LNK2019: unresolved external symbol SDL_RenderCopyEx referenced in function "public: static void __cdecl TM::DrawTextureEx(struct SDL_Texture * &,struct SDL_Rect &,struct SDL_Rect &,enum SDL_RendererFlip,struct SDL_Point &,double)" (?DrawTextureEx@TM@@SAXAEAPEAUSDL_Texture@@AEAUSDL_Rect@@1W4SDL_RendererFlip@@AEAUSDL_Point@@N@Z)
+TM.obj : error LNK2019: unresolved external symbol IMG_Load referenced in function "public: static struct SDL_Texture * __cdecl TM::LoadBWTexture(char const *)" (?LoadBWTexture@TM@@SAPEAUSDL_Texture@@PEBD@Z)
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Dev]\SDL_FULL\x86\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Dev]\SDL_FULL\x86\SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Dev]\SDL_FULL\x86\SDL2_image.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Dev]\SDL_FULL\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\smart\Desktop\Asteroids\Asteroids  ( ECS V2 )\x64\Debug\Asteroids.exe : fatal error LNK1120: 42 unresolved externals

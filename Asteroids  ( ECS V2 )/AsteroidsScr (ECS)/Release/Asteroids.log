@@ -1,0 +1,10 @@
+﻿  MovementSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(102): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(103): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v2 )\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating code
+  2 of 3462 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Asteroids.vcxproj -> C:\Users\smart\Desktop\Asteroids\Asteroids  ( ECS V2 )\Release\Asteroids.exe
