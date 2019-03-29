@@ -1,7 +1,7 @@
 #pragma once
 #include "../Entities/Entity.h"
 
-namespace ENUM {
+namespace MASK_ENTITY {
 	const EntityMask COMPONENT_NONE = 0;
 	const EntityMask COMPONENT_POSITION = 1 << 0;
 	const EntityMask COMPONENT_VELOCITY = 1 << 1;

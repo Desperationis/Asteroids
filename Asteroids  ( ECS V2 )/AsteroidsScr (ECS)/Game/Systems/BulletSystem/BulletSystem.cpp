@@ -50,7 +50,7 @@ void BulletSystem::allocateBullet(double angleOffset = 0.0) {
 	auto& currentID = EntityManager::allocateEntity(tmp.str().c_str(),
 		currentRect.center[0] + (cos((currentAngle + angleOffset) * 0.0174533f) * (currentDest.dest.w / 2.0f)),
 		currentRect.center[1] + (sin((currentAngle + angleOffset) * 0.0174533f) * (currentDest.dest.h / 2.0f)),
-		5, 5, 25, 25, 2, 2, COMPONENT_BULLET).id;
+		7, 7, 25, 25, 2, 2, COMPONENT_BULLET).id;
 
 	MovementSystem::formatIDVelocity(currentID,
 		static_cast<float>((float)cos((currentAngle + angleOffset) * 0.0174533f)) * BULLET::MOVEMENT_SPEED, 

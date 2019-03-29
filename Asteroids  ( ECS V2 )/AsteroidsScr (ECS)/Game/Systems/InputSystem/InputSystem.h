@@ -34,7 +34,7 @@ public:
 	/**
  *  \brief Pumps Events to be queried.
  */
-	void PumpEvents();
+	static void PumpEvents();
 
 	/**
  *  \brief Gets a button.
@@ -60,6 +60,6 @@ public:
 	static const Uint8* keys;
 	static SDL_GameController* controller;
 	enum MOUSE { X, Y, LEFT, RIGHT };
-	int mouse[5];
+	static int mouse[5];
 	static bool controllerConnected;
 };

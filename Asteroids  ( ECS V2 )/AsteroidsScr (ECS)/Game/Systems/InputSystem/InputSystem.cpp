@@ -4,6 +4,7 @@
 const Uint8* InputSystem::keys;
 SDL_GameController* InputSystem::controller = nullptr;
 bool InputSystem::controllerConnected = false;
+int InputSystem::mouse[5];
 
 void InputSystem::PumpEvents()
 {

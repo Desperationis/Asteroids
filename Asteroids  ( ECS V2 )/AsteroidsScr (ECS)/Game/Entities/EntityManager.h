@@ -8,7 +8,7 @@
 //namespaces
 template <typename Type>
 using ComponentMap = tsl::hopscotch_map<EntityID, Type>;  
-using namespace ENUM;
+using namespace MASK_ENTITY;
 
 
 class EntityManager
@@ -18,7 +18,6 @@ public:
 
 	void update();
 	void render();
-	bool events(bool running);
 	static Entity& allocateEntity(const char* name, int x, int y, int w, int h, int x2, int y2, int w2, int h2, EntityMask flags);
 	static void allocateID(Entity& entity, const char* name);
 	static void allocateMemory();

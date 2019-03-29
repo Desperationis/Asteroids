@@ -9,7 +9,7 @@
 #include "Systems/InputSystem/InputSystem.h"
 #include "Systems/CollisionSystem/CollisionSystem.h"
 
-namespace Systems {
+namespace SystemsNamespace {
 	InputSystem* inputSystem = nullptr;
 	MovementSystem* movementSystem = nullptr;
 	RenderingSystem* renderingSystem = nullptr;
@@ -42,3 +42,4 @@ namespace Systems {
 		}
 	}
 };
+

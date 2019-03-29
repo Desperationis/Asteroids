@@ -1,6 +1,6 @@
 #include "EntityManager.h"
 #include "../SystemManagerNamespace.h"
-using namespace Systems;
+using namespace SystemsNamespace;
 SDL_Texture* EntityManager::spritesheet;
 ComponentMap<Name> EntityManager::names;
 int EntityManager::nextID = 0;
@@ -13,7 +13,6 @@ EntityManager::EntityManager()
 
 	initSystems();
 	allocateMemory();
-	//currentVessel = allocateEntity("Vessel", CONSOLE::WINDOW_WIDTH / 2 - 25, CONSOLE::WINDOW_HEIGHT / 2 - 25, 37, 50, 6, 0, 37, 50,  COMPONENT_VESSEL).id;
 	currentVessel = allocateEntity("Vessel", CONSOLE::WINDOW_WIDTH / 2 - 25, CONSOLE::WINDOW_HEIGHT / 2 - 25, 50, 50, 0, 0, 50, 50, COMPONENT_VESSEL).id;
 	CollisionSystem::rects[currentVessel].hitboxScaling = 4.0f;
 
@@ -90,16 +89,6 @@ void EntityManager::freeID(const EntityID& id) {
 	names.erase(id);
 
 	entities.erase(id); //erase the actual entity at the end to prevent false-calling
-}
-
-bool EntityManager::events(bool running)
-{
-	inputSystem->PumpEvents();
-
-	if (inputSystem->keys[SDL_SCANCODE_ESCAPE]) {
-		return false;
-	}
-	return true;
 }
 
 Entity& EntityManager::allocateEntity(const char* name, int x = 0, int y = 0, int w = 0, int h = 0, int x2 = 0, int y2 = 0, int w2 = 16, int h2 = 16, EntityMask flags = COMPONENT_NONE) {

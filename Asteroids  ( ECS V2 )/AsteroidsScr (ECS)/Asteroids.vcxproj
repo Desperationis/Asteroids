@@ -28,6 +28,8 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Game\Scenes\Button.cpp" />
+    <ClCompile Include="Game\Scenes\Menu\Menu.cpp" />
     <ClCompile Include="Game\Systems\DeathSystem\DeathSystem.cpp" />
     <ClCompile Include="Game\Systems\BulletSystem\BulletSystem.cpp" />
     <ClCompile Include="Game\Systems\CollisionSystem\CollisionSystem.cpp" />
@@ -35,7 +37,9 @@
     <ClCompile Include="Game\Game\Game.cpp" />
     <ClCompile Include="Game\Game\main.cpp" />
     <ClCompile Include="Game\stdafx.cpp" />
+    <ClCompile Include="Game\Systems\FontSystem\FontSystem.cpp" />
     <ClCompile Include="Game\Systems\InputSystem\InputSystem.cpp" />
+    <ClCompile Include="Game\Scenes\SceneManager\SceneManager.cpp" />
     <ClCompile Include="Game\Systems\MeteorSystem\MeteorSystem.cpp" />
     <ClCompile Include="Game\Systems\MovementSystem\MovementSystem.cpp" />
     <ClCompile Include="Game\Systems\RenderingSystem\RenderingSystem.cpp" />
@@ -43,6 +47,9 @@
     <ClCompile Include="Tools\TM.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Game\Scenes\Button.h" />
+    <ClInclude Include="Game\Scenes\Menu\Menu.h" />
+    <ClInclude Include="Game\Scenes\SceneNamespace.h" />
     <ClInclude Include="Game\Systems\DeathSystem\DeathSystem.h" />
     <ClInclude Include="Game\Systems\BulletSystem\BulletSystem.h" />
     <ClInclude Include="Game\Systems\CollisionSystem\CollisionSystem.h" />
@@ -53,6 +60,8 @@
     <ClInclude Include="Game\Game\Setup.h" />
     <ClInclude Include="Game\stdafx.h" />
     <ClInclude Include="Game\SystemManagerNamespace.h" />
+    <ClInclude Include="Game\Scenes\SceneManager\SceneManager.h" />
+    <ClInclude Include="Game\Systems\FontSystem\FontSystem.h" />
     <ClInclude Include="Game\Systems\MovementSystem\MovementSystem.h" />
     <ClInclude Include="Game\Systems\RenderingSystem\RenderingSystem.h" />
     <ClInclude Include="Game\Systems\ScoreSystem\ScoreSystem.h" />
@@ -69,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\8bitoperator_jve.ttf" />
+    <Font Include="Fonts\ka1.ttf" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
