@@ -1,13 +1,10 @@
 #include "Game.h"
 #include "../Entities/EntityManager.h"
-#include "../Scenes/SceneManager/SceneManager.h"
-#include "../Systems/InputSystem/InputSystem.h"
+
 
 SDL_Renderer* Game::renderer;
 SDL_Window* Game::window;
 Uint8 Game::countedFrames = 0;
-EntityManager* Game::EM = nullptr;
-SceneManager* Game::SM = nullptr;
 
 Game::Game(const char* title, int w, int h, Uint32 flags, int x, int y)
 {
@@ -27,7 +24,6 @@ Game::Game(const char* title, int w, int h, Uint32 flags, int x, int y)
 	else {  running = false; }
 
 	EM = new EntityManager();
-	SM = new SceneManager();
 }
 Uint64 now = 0;
 void Game::update()
@@ -36,16 +32,14 @@ void Game::update()
 	float avgFPS = countedFrames / (now / 1000.0f);
 	if (avgFPS > 2000000) avgFPS = 0; 
 	if (countedFrames % 30 == 0) std::cout << avgFPS << std::endl;
-
-	SM->update();
-
+	EM->update();
 	++countedFrames;
 }
 void Game::render()
 {
 	SDL_RenderClear(renderer);
 
-	SM->render();
+	EM->render();
 
 	SDL_SetRenderDrawColor(renderer, CONSOLE::RENDERER_DRAWCOLOR[0], 
 		CONSOLE::RENDERER_DRAWCOLOR[1], CONSOLE::RENDERER_DRAWCOLOR[2], 255);
@@ -63,11 +57,7 @@ void Game::events()
 		return;
 	}
 
-	InputSystem::PumpEvents();
-
-	if (InputSystem::keys[SDL_SCANCODE_ESCAPE]) {
-		running = false;
-	}
+	running = EM->events(running);
 }
 
 void Game::clean()

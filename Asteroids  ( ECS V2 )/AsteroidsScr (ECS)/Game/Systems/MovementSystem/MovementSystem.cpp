@@ -47,8 +47,8 @@ void MovementSystem::updatePhysics(const EntityID& id, const EntityMask& mask)
 	}
 
 	if ((mask & COMPONENT_DRIFT) == COMPONENT_DRIFT) {
-		currentVelocity.dx *= SPACESHIP::DRIFT;
-		currentVelocity.dy *= SPACESHIP::DRIFT;
+		currentVelocity.dx *= 0.985f;
+		currentVelocity.dy *= 0.985f;
 	}
 	if ((mask & COMPONENT_WALLLOOP) == COMPONENT_WALLLOOP) {
 		if (currentRect.right < 0) {

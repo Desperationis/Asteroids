@@ -1,12 +1,11 @@
 #include "EntityManager.h"
 #include "../SystemManagerNamespace.h"
-using namespace SystemsNamespace;
+using namespace Systems;
 SDL_Texture* EntityManager::spritesheet;
 ComponentMap<Name> EntityManager::names;
 int EntityManager::nextID = 0;
 ComponentMap<Entity> EntityManager::entities;
 EntityID EntityManager::currentVessel;
-std::vector<MeteorData> EntityManager::queue;
 
 EntityManager::EntityManager()
 {
@@ -14,33 +13,25 @@ EntityManager::EntityManager()
 
 	initSystems();
 	allocateMemory();
+	//currentVessel = allocateEntity("Vessel", CONSOLE::WINDOW_WIDTH / 2 - 25, CONSOLE::WINDOW_HEIGHT / 2 - 25, 37, 50, 6, 0, 37, 50,  COMPONENT_VESSEL).id;
 	currentVessel = allocateEntity("Vessel", CONSOLE::WINDOW_WIDTH / 2 - 25, CONSOLE::WINDOW_HEIGHT / 2 - 25, 50, 50, 0, 0, 50, 50, COMPONENT_VESSEL).id;
-	CollisionSystem::rects[currentVessel].hitboxScaling = 3.0f;
-	LevelSystem::loadLevel(0);
+	CollisionSystem::rects[currentVessel].hitboxScaling = 4.0f;
 
 }
 
 bool tmp = false;
 void EntityManager::update()
 {
-	if (MeteorSystem::meteorsOnScreen == 0 && queue.size() == 0) {
-		LevelSystem::currentLevel++;
-		LevelSystem::loadLevel(LevelSystem::currentLevel);
-	}
 	for (auto it = entities.begin(); it != entities.end(); it++) {
 		movementSystem->updatePhysics(it.key(), entities[it.key()].mask);
 	}
 	if ((InputSystem::keys[SDL_SCANCODE_TAB] || InputSystem::GetButton(SDL_CONTROLLER_BUTTON_B)) && !tmp) {
 		float angle = 0.0f;
-		for (unsigned int i = 0; i < 5; i++) {
+		for (unsigned int i = 0; i < 50; i++) {
 			angle = rand() % 3600 / 10.0f;
-			meteorSystem->allocateMeteor(CONSOLE::WINDOW_WIDTH / 2 - 25, CONSOLE::WINDOW_HEIGHT / 2 - 25, cos(angle * 0.0174533f) * METEOR_::SPEED, sin(angle *0.0174533f) * METEOR_::SPEED, COMPONENT_METEOR, MeteorSystem::LARGE);
+			meteorSystem->allocateMeteor(CONSOLE::WINDOW_WIDTH / 2 - 25, CONSOLE::WINDOW_HEIGHT / 2 - 25, cos(angle * 0.0174533f) * 5, sin(angle *0.0174533f) * 5, COMPONENT_METEOR);
 		}
 	}
-	for (auto it = queue.begin(); it != queue.end(); it++) {
-		MovementSystem::positions[meteorSystem->allocateMeteor(it->x, it->y, it->dx, it->dy, COMPONENT_METEOR, it->size)].angle = it->angle;
-	}
-	queue.clear();
 	tmp = (InputSystem::keys[SDL_SCANCODE_TAB] || InputSystem::GetButton(SDL_CONTROLLER_BUTTON_B));
 
 	collisionSystem->update();
@@ -57,7 +48,7 @@ void EntityManager::render()
 
 	for (auto it = entities.begin(); it != entities.end(); it++) {
 		renderingSystem->renderEntity(it.key());
-		if (InputSystem::keys[SDL_SCANCODE_LCTRL]) { collisionSystem->renderRect(it.key()); }
+		collisionSystem->renderRect(it.key());
 
 		if (renderNode) {
 			SDL_SetRenderDrawColor(Game::renderer, (MovementSystem::positions[it.key()].node + 1) * 2,
@@ -88,15 +79,6 @@ void EntityManager::allocateID(Entity& entity, const char* name)
 	if ((mask & COMPONENT_SCORE) == COMPONENT_SCORE) {
 		scoreSystem->allocateID(id);
 	}
-	if ((mask & COMPONENT_DAMAGE) == COMPONENT_DAMAGE) {
-		healthDamageSystem->allocateDamageID(id);
-	}
-	if ((mask & COMPONENT_HEALTH) == COMPONENT_HEALTH) {
-		healthDamageSystem->allocateHealthID(id);
-	}
-	if ((mask & COMPONENT_SPLIT) == COMPONENT_SPLIT) {
-		meteorSystem->allocateID(id);
-	}
 	names[id] = Name{ name }; //doesn't actually save memory - velocity would be applied to a static object
 }
 
@@ -108,6 +90,16 @@ void EntityManager::freeID(const EntityID& id) {
 	names.erase(id);
 
 	entities.erase(id); //erase the actual entity at the end to prevent false-calling
+}
+
+bool EntityManager::events(bool running)
+{
+	inputSystem->PumpEvents();
+
+	if (inputSystem->keys[SDL_SCANCODE_ESCAPE]) {
+		return false;
+	}
+	return true;
 }
 
 Entity& EntityManager::allocateEntity(const char* name, int x = 0, int y = 0, int w = 0, int h = 0, int x2 = 0, int y2 = 0, int w2 = 16, int h2 = 16, EntityMask flags = COMPONENT_NONE) {

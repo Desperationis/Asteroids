@@ -3,12 +3,11 @@
 #include "../MovementSystem/MovementSystem.h"
 #include "../ScoreSystem/ScoreSystem.h"
 #include "../DeathSystem/DeathSystem.h"
-#include "../HealthDamageSystem/HealthDamageSystem.h"
-#include "../MeteorSystem/MeteorSystem.h"
+
 
 ComponentMap<Rect> CollisionSystem::rects;
 std::vector<ComponentMap<EntityID>> CollisionSystem::nodes;
-std::vector<EntityID> ids;
+
 
 void CollisionSystem::checkCollision(const EntityID& id, const char* name) {
 	auto& names = EntityManager::names;
@@ -17,49 +16,18 @@ void CollisionSystem::checkCollision(const EntityID& id, const char* name) {
 	
 
 	for (auto it = nodes[positions[id].node].begin(); it != nodes[positions[id].node].end(); it++) {
-		bool bulletDead = false;
 		if (names[it.key()].name.find(name) != std::string::npos) {
 			if (CollideRect(rects[it.key()], rects[id]) && it.key() != id) {
 				if (player) {
 					DeathSystem::die();
 				}
 				else {
-					bool meteorDead = false;
-					while (!meteorDead) {
-						HealthDamageSystem::attack(it.key(), id);
-
-						if (HealthDamageSystem::healths[it.key()].health <= 0.0f) {
-							ids.push_back(it.key());
-							MeteorSystem::meteorsOnScreen--;
-							rects[it.key()].angleOfImpact = MovementSystem::positions[id].angle;
-							switch (MeteorSystem::sizes[id].size) {
-							case MeteorSystem::METEOR::SMALL:
-								ScoreSystem::scores[EntityManager::currentVessel].score += 1000;
-								break;
-							case MeteorSystem::METEOR::MEDIUM:
-								ScoreSystem::scores[EntityManager::currentVessel].score += 5000;
-								break;
-							case MeteorSystem::METEOR::LARGE:
-								ScoreSystem::scores[EntityManager::currentVessel].score += 1000;
-								break;
-							};
-							meteorDead = true;
-						}
-						if (HealthDamageSystem::damages[id].hardness <= 0) {
-							EntityManager::freeID(id);
-							bulletDead = true;
-						}
-					}
-					if (bulletDead) break;
+					EntityManager::freeID(it.key());
+					ScoreSystem::scores[EntityManager::currentVessel].score++;
 				}
 			}
 		}
 	}
-	for (int i = 0; i < ids.size(); i++) {
-		MeteorSystem::splitMeteor(ids[i]);
-		EntityManager::freeID(ids[i]);
-	}
-	ids.clear();
 }
 
 void CollisionSystem::checkCollisions() {

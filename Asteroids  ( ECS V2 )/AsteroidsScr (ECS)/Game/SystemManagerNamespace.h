@@ -8,10 +8,8 @@
 #include "Systems/RenderingSystem/RenderingSystem.h"
 #include "Systems/InputSystem/InputSystem.h"
 #include "Systems/CollisionSystem/CollisionSystem.h"
-#include "Systems/HealthDamageSystem/HealthDamageSystem.h"
-#include "Systems/LevelSystem/LevelSystem.h"
 
-namespace SystemsNamespace {
+namespace Systems {
 	InputSystem* inputSystem = nullptr;
 	MovementSystem* movementSystem = nullptr;
 	RenderingSystem* renderingSystem = nullptr;
@@ -20,20 +18,16 @@ namespace SystemsNamespace {
 	ScoreSystem* scoreSystem = nullptr;
 	DeathSystem* deathSystem = nullptr;
 	MeteorSystem* meteorSystem = nullptr;
-	HealthDamageSystem* healthDamageSystem = nullptr;
-	LevelSystem* levelSystem = nullptr;
 
 	void initSystems() {
 		movementSystem = new MovementSystem();
 		renderingSystem = new RenderingSystem();
 		inputSystem = new InputSystem();
-		healthDamageSystem = new HealthDamageSystem();
-		meteorSystem = new MeteorSystem();
 		collisionSystem = new CollisionSystem();
 		bulletSystem = new BulletSystem();
+		meteorSystem = new MeteorSystem();
 		scoreSystem = new ScoreSystem();
 		deathSystem = new DeathSystem();
-		levelSystem = new LevelSystem();
 	}
 	
 	void allocateSystemMemory() {
@@ -48,4 +42,3 @@ namespace SystemsNamespace {
 		}
 	}
 };
-

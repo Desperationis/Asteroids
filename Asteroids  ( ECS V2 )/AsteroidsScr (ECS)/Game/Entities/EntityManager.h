@@ -8,9 +8,9 @@
 //namespaces
 template <typename Type>
 using ComponentMap = tsl::hopscotch_map<EntityID, Type>;  
-using namespace MASK_ENTITY;
+using namespace ENUM;
 
-struct MeteorData;
+
 class EntityManager
 {
 public:
@@ -18,6 +18,7 @@ public:
 
 	void update();
 	void render();
+	bool events(bool running);
 	static Entity& allocateEntity(const char* name, int x, int y, int w, int h, int x2, int y2, int w2, int h2, EntityMask flags);
 	static void allocateID(Entity& entity, const char* name);
 	static void allocateMemory();
@@ -27,7 +28,6 @@ public:
 	static SDL_Texture* spritesheet;
 	static ComponentMap<Entity> entities;
 	static ComponentMap<Name> names;
-	static std::vector<MeteorData> queue;
 
 	static int nextID;
 	static EntityID currentVessel;

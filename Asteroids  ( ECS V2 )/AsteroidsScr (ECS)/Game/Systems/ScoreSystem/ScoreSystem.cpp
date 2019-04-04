@@ -3,18 +3,16 @@
 ComponentMap<Score> ScoreSystem::scores;
 
 ScoreSystem::ScoreSystem() {
-	font.color.r = font.color.g = font.color.b = 255;
-	font.dest.x = 0, font.dest.y = 0;
-	FontSystem::setUp(font, "Fonts\\8bitoperator_jve.ttf", 64);
-	FontSystem::setText(font, "0", font.color);
-
+	font = TTF_OpenFont("Fonts\\8bitoperator_jve.ttf", 24);
+	TM::SetAlphaBlending(texture);
+	TM::SetAlpha(texture, 50);
 	Uint64 tmp = 0;
 	makeScore(tmp, tmp);
 }
 
 
 void ScoreSystem::render() {
-	TM::DrawTexture(font.texture, font.dest);
+	TM::DrawTexture(texture, dest);
 }
 
 void ScoreSystem::update() {
@@ -34,11 +32,18 @@ void ScoreSystem::freeID(const EntityID& id) {
 }
 
 void ScoreSystem::makeScore(Uint64& score, Uint64& preScore) {
-	SDL_DestroyTexture(font.texture);
-	font.texture = nullptr;
-	std::stringstream charScore; charScore << "Score: " << score;
+	SDL_DestroyTexture(texture);
+	texture = nullptr;
+	std::stringstream charScore; charScore << "Eliminated: " << score;
 
-	FontSystem::setText(font, charScore.str().c_str(), font.color);
-
+	SDL_Surface* surfaceTmp = TTF_RenderText_Solid(font, charScore.str().c_str(), fontColor);
+	texture = SDL_CreateTextureFromSurface(Game::renderer, surfaceTmp);
+	SDL_FreeSurface(surfaceTmp);
+	surfaceTmp = nullptr;
+	SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
+	dest.x = 0, dest.y = 0;
 	preScore = score;
+	TM::SetAlpha(texture, 255);
+
+	
 }

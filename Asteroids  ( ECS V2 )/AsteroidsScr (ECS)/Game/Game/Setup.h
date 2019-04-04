@@ -24,27 +24,20 @@ namespace ENTITY {
 namespace SPACESHIP
 {
 	const float MAX_SPEED = 9.0f;
-	const float MOVEMENT_SPEED = 0.35f;
+	const float MOVEMENT_SPEED = 0.20f;
 	const float RECOIL = 0.03f;
-	const float DRIFT = 0.96f;
-	constexpr int ROTATION_SPEED = 5;
+	const float DRIFT = 0.995f;
+	constexpr int ROTATION_SPEED = 6;
 }
 
 //BULLET SETUP
 
 namespace BULLET
 {
-	const float MOVEMENT_SPEED = 20.0f;
+	const float MOVEMENT_SPEED = 15.0f;
 	const int RAPIDFIRE_TICKS = 3;
-	const int RAPIDFIRE_LENGTH = 180;
 }
 
-//METEOR SETUP
-
-namespace METEOR_
-{
-	const float SPEED = 2.0f;
-}
 
 
 

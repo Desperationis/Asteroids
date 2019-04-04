@@ -7,7 +7,6 @@
 #include "../../Tools/TM.h"
 
 class EntityManager;
-class SceneManager;
 struct Game
 {
 public:
@@ -20,8 +19,8 @@ public:
 	static SDL_Window * window;
 	static SDL_Renderer* renderer;
 	static Uint8 countedFrames;
-	static EntityManager* EM;
-	static SceneManager* SM;
+private:
+	EntityManager* EM;
 	SDL_Event event;
-	bool running = false;
+	bool running;
 };

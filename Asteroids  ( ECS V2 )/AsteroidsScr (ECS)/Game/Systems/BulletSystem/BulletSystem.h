@@ -9,6 +9,6 @@ public:
 	bool timer(int delay);
 	void shoot();
 
-	Uint64 now = 0;
+	Uint64 now = 0, then = 0;
 };
 

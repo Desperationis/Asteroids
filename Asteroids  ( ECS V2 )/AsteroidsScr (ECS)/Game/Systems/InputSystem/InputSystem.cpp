@@ -4,7 +4,6 @@
 const Uint8* InputSystem::keys;
 SDL_GameController* InputSystem::controller = nullptr;
 bool InputSystem::controllerConnected = false;
-int InputSystem::mouse[5];
 
 void InputSystem::PumpEvents()
 {
@@ -20,10 +19,6 @@ void InputSystem::getInput(const EntityID& id)
 	auto& currentPosition = MovementSystem::positions[id];
 	auto& currentVelocity = MovementSystem::velocities[id];
 
-
-	currentPosition.angle += (GetAxis(SDL_CONTROLLER_AXIS_LEFTX) / 32767.0f) * SPACESHIP::ROTATION_SPEED;
-	currentVelocity.thrust = keys[SDL_SCANCODE_UP] || GetAxis(SDL_CONTROLLER_AXIS_TRIGGERLEFT) || keys[SDL_SCANCODE_W];
-
 	if (!controllerConnected) {
 		if (keys[SDL_SCANCODE_RIGHT] || keys[SDL_SCANCODE_D]) {
 			currentPosition.angle += SPACESHIP::ROTATION_SPEED;
@@ -32,5 +27,11 @@ void InputSystem::getInput(const EntityID& id)
 			currentPosition.angle -= SPACESHIP::ROTATION_SPEED;
 		}
 	}
+	else {
+		currentPosition.angle += (GetAxis(SDL_CONTROLLER_AXIS_LEFTX) / 32767.0f) * SPACESHIP::ROTATION_SPEED;
+	}
+
+	currentVelocity.thrust = keys[SDL_SCANCODE_UP] || GetAxis(SDL_CONTROLLER_AXIS_TRIGGERLEFT) || keys[SDL_SCANCODE_W];
+
 
 }
