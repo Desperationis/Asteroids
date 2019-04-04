@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Game\Systems\LevelSystem\Levels.json" />
     <None Include="libfreetype-6.dll" />
     <None Include="libjpeg-9.dll" />
     <None Include="libpng16-16.dll" />
@@ -38,8 +39,10 @@
     <ClCompile Include="Game\Game\main.cpp" />
     <ClCompile Include="Game\stdafx.cpp" />
     <ClCompile Include="Game\Systems\FontSystem\FontSystem.cpp" />
+    <ClCompile Include="Game\Systems\HealthDamageSystem\HealthDamageSystem.cpp" />
     <ClCompile Include="Game\Systems\InputSystem\InputSystem.cpp" />
     <ClCompile Include="Game\Scenes\SceneManager\SceneManager.cpp" />
+    <ClCompile Include="Game\Systems\LevelSystem\LevelSystem.cpp" />
     <ClCompile Include="Game\Systems\MeteorSystem\MeteorSystem.cpp" />
     <ClCompile Include="Game\Systems\MovementSystem\MovementSystem.cpp" />
     <ClCompile Include="Game\Systems\RenderingSystem\RenderingSystem.cpp" />
@@ -62,6 +65,8 @@
     <ClInclude Include="Game\SystemManagerNamespace.h" />
     <ClInclude Include="Game\Scenes\SceneManager\SceneManager.h" />
     <ClInclude Include="Game\Systems\FontSystem\FontSystem.h" />
+    <ClInclude Include="Game\Systems\HealthDamageSystem\HealthDamageSystem.h" />
+    <ClInclude Include="Game\Systems\LevelSystem\LevelSystem.h" />
     <ClInclude Include="Game\Systems\MovementSystem\MovementSystem.h" />
     <ClInclude Include="Game\Systems\RenderingSystem\RenderingSystem.h" />
     <ClInclude Include="Game\Systems\ScoreSystem\ScoreSystem.h" />
@@ -75,6 +80,7 @@
     <Image Include="Assests\MeteorsAssests.png" />
     <Image Include="Assests\spaceship.png" />
     <Image Include="Assests\Snivy.jpg" />
+    <Image Include="Assests\TitleScreen.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\8bitoperator_jve.ttf" />

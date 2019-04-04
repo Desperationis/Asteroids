@@ -7,4 +7,7 @@ void Button::render() {
 	if (font.textureLoaded) {
 		TM::DrawTexture(font.texture, font.dest);
 	}
+	if (textureLoaded) {
+		TM::DrawTexture(texture, dest);
+	}
 }

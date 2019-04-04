@@ -13,7 +13,8 @@ public:
 
 	static void update();
 	static void render();
-	static void allocateButton(int x, int y, int w, int h, Scenes scene, const char* text, SDL_Color& color, SDL_Color& bg_color, const char* file, int ptsize);
+	static EntityID allocateButton(int x, int y, int w, int h, Scenes scene, const char* text, SDL_Color& color, SDL_Color& bg_color, const char* file, int ptsize);
+	static EntityID allocateButton(int x, int y, int w, int h, const char* texture);
 	static void freeID(const EntityID& id);
 
 	static ComponentMap<Button> buttons;

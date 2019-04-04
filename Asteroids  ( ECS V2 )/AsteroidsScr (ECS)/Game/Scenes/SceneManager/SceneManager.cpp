@@ -49,7 +49,7 @@ void SceneManager::render() {
 	}
 }
 
-void SceneManager::allocateButton(int x, int y, int w, int h, Scenes scene, const char* text, SDL_Color& color, SDL_Color& bg_color, const char* file, int ptsize) {
+EntityID SceneManager::allocateButton(int x, int y, int w, int h, Scenes scene, const char* text, SDL_Color& color, SDL_Color& bg_color, const char* file, int ptsize) {
 	nextID++;
 	buttons[nextID] = Button{ };
 	auto& currentButton = buttons[nextID];
@@ -65,6 +65,23 @@ void SceneManager::allocateButton(int x, int y, int w, int h, Scenes scene, cons
 
 	currentButton.font.dest.x = (currentButton.dest.x + (currentButton.dest.w / 2)) - (currentButton.font.dest.w / 2);
 	currentButton.font.dest.y = (currentButton.dest.y + (currentButton.dest.h / 2)) - (currentButton.font.dest.h / 2);
+
+	return nextID;
+}
+
+EntityID SceneManager::allocateButton(int x, int y, int w, int h, const char* texture) {
+	nextID++;
+	buttons[nextID] = Button{ };
+	auto& currentButton = buttons[nextID];
+	currentButton.dest.x = x;
+	currentButton.dest.y = y;
+	currentButton.dest.w = w;
+	currentButton.dest.h = h;
+
+	currentButton.texture = TM::LoadTexture(texture);
+	currentButton.textureLoaded = true;
+
+	return nextID;
 }
 
 void SceneManager::freeID(const EntityID& id) {

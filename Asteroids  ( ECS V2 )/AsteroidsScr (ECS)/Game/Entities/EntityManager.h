@@ -10,7 +10,7 @@ template <typename Type>
 using ComponentMap = tsl::hopscotch_map<EntityID, Type>;  
 using namespace MASK_ENTITY;
 
-
+struct MeteorData;
 class EntityManager
 {
 public:
@@ -27,6 +27,7 @@ public:
 	static SDL_Texture* spritesheet;
 	static ComponentMap<Entity> entities;
 	static ComponentMap<Name> names;
+	static std::vector<MeteorData> queue;
 
 	static int nextID;
 	static EntityID currentVessel;

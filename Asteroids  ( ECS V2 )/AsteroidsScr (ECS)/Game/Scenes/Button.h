@@ -10,6 +10,7 @@ struct Button : public Entity {
 	int scene = 0;
 	
 	Font font;
-	SDL_Color bg_color{ 255,255,255,255 };
+	SDL_Color bg_color{ 255,255,255,255  };
 	SDL_Texture* texture = nullptr;
+	bool textureLoaded = false;
 };

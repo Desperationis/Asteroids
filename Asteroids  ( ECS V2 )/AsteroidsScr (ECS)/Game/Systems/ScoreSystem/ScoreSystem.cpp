@@ -3,9 +3,9 @@
 ComponentMap<Score> ScoreSystem::scores;
 
 ScoreSystem::ScoreSystem() {
-	font.color.b = font.color.g = 0;
+	font.color.r = font.color.g = font.color.b = 255;
 	font.dest.x = 0, font.dest.y = 0;
-	FontSystem::setUp(font, "Fonts\\8bitoperator_jve.ttf", 24);
+	FontSystem::setUp(font, "Fonts\\8bitoperator_jve.ttf", 64);
 	FontSystem::setText(font, "0", font.color);
 
 	Uint64 tmp = 0;
@@ -36,7 +36,7 @@ void ScoreSystem::freeID(const EntityID& id) {
 void ScoreSystem::makeScore(Uint64& score, Uint64& preScore) {
 	SDL_DestroyTexture(font.texture);
 	font.texture = nullptr;
-	std::stringstream charScore; charScore << "Eliminated: " << score;
+	std::stringstream charScore; charScore << "Score: " << score;
 
 	FontSystem::setText(font, charScore.str().c_str(), font.color);
 
