@@ -1,0 +1,34 @@
+{
+  "Level 1": {
+    "small-meteor": 1
+  },
+  "Level 2": {
+    "small-meteor": 3
+  },
+  "Level 3": {
+    "small-meteor": 2,
+    "medium-meteor": 1
+  },
+  "Level 4": {
+    "small-meteor": 3,
+    "medium-meteor": 2
+  },
+  "Level 5": {
+    "small-meteor": 4,
+    "medium-meteor": 4,
+    "ufo": 1
+  },
+  "Level 6": {
+    "medium-meteor": 4,
+    "large-meteor": 1
+  },
+  "Level 7": {
+    "small-meteor": 10,
+    "medium-meteor": 5,
+    "large-meteor": 3,
+    "ufo": 2
+  },
+  "Level 1000": {
+    "god-meteor": 1
+  }
+}

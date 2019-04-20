@@ -76,6 +76,7 @@ void MovementSystem::updatePhysics(const EntityID& id, const EntityMask& mask)
 	}//make sure this is used after any change in direction
 	if (((mask & COMPONENT_WALLDEATH) == COMPONENT_WALLDEATH) && (currentPosition.x > CONSOLE::WINDOW_WIDTH - ENTITY::BORDER_DISTANCE || currentPosition.x < ENTITY::BORDER_DISTANCE || currentPosition.y < 0 || currentPosition.y > CONSOLE::WINDOW_HEIGHT)) {
 		EntityManager::freeID(id);
+		std::cout << "BOI" << std::endl;
 	} // make sure this is last, otherwise false-calling will be used
 
 
