@@ -19,7 +19,6 @@ EntityManager::EntityManager()
 
 }
 
-bool tmp = false;
 void EntityManager::update()
 {
 	MeteorSystem::meteorsOnScreen = MeteorSystem::meteorID.size();
@@ -33,15 +32,7 @@ void EntityManager::update()
 	for (auto it = entities.begin(); it != entities.end(); it++) {
 		movementSystem->updatePhysics(it.key(), entities[it.key()].mask);
 	}
-	if ((InputSystem::keys[SDL_SCANCODE_TAB] || InputSystem::GetButton(SDL_CONTROLLER_BUTTON_B)) && !tmp) {
-		float angle = 0.0f;
-		for (unsigned int i = 0; i < 5; i++) {
-			angle = rand() % 3600 / 10.0f;
-			meteorSystem->allocateMeteor(CONSOLE::WINDOW_WIDTH / 2 - 25, CONSOLE::WINDOW_HEIGHT / 2 - 25, cos(angle * 0.0174533f) * METEOR_::SPEED, sin(angle *0.0174533f) * METEOR_::SPEED, COMPONENT_METEOR, MeteorSystem::LARGE);
-		}
-	}
 	queue.clear();
-	tmp = (InputSystem::keys[SDL_SCANCODE_TAB] || InputSystem::GetButton(SDL_CONTROLLER_BUTTON_B));
 
 	bulletSystem->update();
 	scoreSystem->update();
@@ -58,8 +49,6 @@ void EntityManager::render()
 
 	for (auto it = entities.begin(); it != entities.end(); it++) {
 		renderingSystem->renderEntity(it.key());
-		if (InputSystem::keys[SDL_SCANCODE_LCTRL]) { collisionSystem->renderRect(it.key()); entities[currentVessel].mask |= POWERUP_GRAPESHOT | POWERUP_RAPIDFIRE | POWERUP_INFINITYBULLET;
-		}
 	}
 	if (playerOutline) {
 		TM::SetColorMod(spritesheet, 0, 200, 200);

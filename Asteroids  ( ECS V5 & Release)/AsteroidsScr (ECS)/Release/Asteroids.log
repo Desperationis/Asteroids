@@ -1,4 +1,61 @@
-﻿  Generating code
+﻿  ButtonSystem.cpp
+  Switch.cpp
+  Menu.cpp
+  AISystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\aisystem\aisystem.cpp(17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\aisystem\aisystem.cpp(35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  CameraSystem.cpp
+  DeathSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\deathsystem\deathsystem.cpp(36): warning C4244: 'argument': conversion from 'Uint64' to 'Uint8', possible loss of data
+  BulletSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\bulletsystem\bulletsystem.cpp(69): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\bulletsystem\bulletsystem.cpp(68): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  CollisionSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\collisionsystem\collisionsystem.cpp(86): warning C4018: '<': signed/unsigned mismatch
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\collisionsystem\collisionsystem.cpp(89): warning C4018: '<': signed/unsigned mismatch
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\collisionsystem\collisionsystem.cpp(92): warning C4018: '<': signed/unsigned mismatch
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\collisionsystem\collisionsystem.cpp(151): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\collisionsystem\collisionsystem.cpp(151): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  EntityManager.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\entities\entitymanager.cpp(31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\entities\entitymanager.cpp(56): warning C4838: conversion from 'unsigned int' to 'int' requires a narrowing conversion
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\entities\entitymanager.cpp(131): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\entities\entitymanager.cpp(150): warning C4018: '<': signed/unsigned mismatch
+  Game.cpp
+  main.cpp
+  stdafx.cpp
+  FontSystem.cpp
+  HealthDamageSystem.cpp
+  InputSystem.cpp
+  SceneManager.cpp
+  LevelSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\levelsystem\levelsystem.cpp(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\levelsystem\levelsystem.cpp(32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\levelsystem\levelsystem.cpp(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\levelsystem\levelsystem.cpp(38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\levelsystem\levelsystem.cpp(42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\levelsystem\levelsystem.cpp(43): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\levelsystem\levelsystem.cpp(61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  MeteorSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\meteorsystem\meteorsystem.cpp(36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\meteorsystem\meteorsystem.cpp(94): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\meteorsystem\meteorsystem.cpp(95): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\meteorsystem\meteorsystem.cpp(100): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\meteorsystem\meteorsystem.cpp(101): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  MovementSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(62): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(102): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(103): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\movementsystem\movementsystem.cpp(142): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  RenderingSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\renderingsystem\renderingsystem.cpp(10): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+  Compiling...
+  ScoreSystem.cpp
+  UFOSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\systems\ufosystem\ufosystem.cpp(37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  TM.cpp
+  Generating code
   All 8573 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  Asteroids.vcxproj -> C:\Users\smart\Desktop\Asteroids\Asteroids  ( ECS V4 )\Release\Asteroids.exe
+  Asteroids.vcxproj -> C:\Users\smart\Desktop\Asteroids\Asteroids  ( ECS V5 & Release)\Release\Asteroids.exe
