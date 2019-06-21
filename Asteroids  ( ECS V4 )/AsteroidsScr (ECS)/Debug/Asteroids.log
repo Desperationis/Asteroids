@@ -1,0 +1,9 @@
+﻿  EntityManager.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v4 ) - save\asteroidsscr (ecs)\game\entities\entitymanager.cpp(31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v4 ) - save\asteroidsscr (ecs)\game\entities\entitymanager.cpp(62): warning C4838: conversion from 'unsigned int' to 'int' requires a narrowing conversion
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v4 ) - save\asteroidsscr (ecs)\game\entities\entitymanager.cpp(137): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v4 ) - save\asteroidsscr (ecs)\game\entities\entitymanager.cpp(156): warning C4018: '<': signed/unsigned mismatch
+  DeathSystem.cpp
+c:\users\smart\desktop\asteroids\asteroids  ( ecs v4 ) - save\asteroidsscr (ecs)\game\systems\deathsystem\deathsystem.cpp(36): warning C4244: 'argument': conversion from 'Uint64' to 'Uint8', possible loss of data
+  Generating Code...
+  Asteroids.vcxproj -> C:\Users\smart\Desktop\Asteroids\Asteroids  ( ECS V4 ) - SAVE\Debug\Asteroids.exe
