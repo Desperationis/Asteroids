@@ -1,6 +1,0 @@
-﻿  EntityManager.cpp
-c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\entities\entitymanager.cpp(30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\entities\entitymanager.cpp(47): warning C4838: conversion from 'unsigned int' to 'int' requires a narrowing conversion
-c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\entities\entitymanager.cpp(120): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\smart\desktop\asteroids\asteroids  ( ecs v5 & release)\asteroidsscr (ecs)\game\entities\entitymanager.cpp(139): warning C4018: '<': signed/unsigned mismatch
-  Asteroids.vcxproj -> C:\Users\smart\Desktop\Asteroids\Asteroids  ( ECS V5 & Release)\Debug\Asteroids.exe
