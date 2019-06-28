@@ -7,6 +7,8 @@
 
 EntityID nameID = 0;
 bool spacePressed = false;
+float BulletSystem::currentHard = 1;
+int BulletSystem::currentGrapes = 0;
 
 void BulletSystem::update() {
 	auto& currentID = EntityManager::currentVessel;
@@ -23,6 +25,10 @@ void BulletSystem::update() {
 		currentMask = currentMask & ~POWERUP_RAPIDFIRE;
 		bulletTimer = 1;
 		powerUp = false;
+	}
+	if ((currentMask & POWERUP_DMG) == POWERUP_DMG) {
+		currentMask = currentMask & ~POWERUP_DMG;
+		currentHard *= 2;
 	}
 
 	if (InputSystem::usingController) {
@@ -43,9 +49,40 @@ void BulletSystem::shoot() {
 	auto& currentID = EntityManager::currentVessel;
 	auto& currentMask = EntityManager::entities[currentID].mask;
 
-	if ((currentMask & POWERUP_GRAPESHOT) == POWERUP_GRAPESHOT) {
+	if ((currentMask & POWERUP_GRAPESHOT) == POWERUP_GRAPESHOT && currentGrapes < 4) {
+		currentGrapes++;
+		currentMask = currentMask & ~POWERUP_GRAPESHOT;
+	}
+
+	switch (currentGrapes) {
+	case 1:
 		allocateBullet(-10);
 		allocateBullet(10);
+		break;
+	case 2:
+		allocateBullet(-10);
+		allocateBullet(-5);
+		allocateBullet(5);
+		allocateBullet(10);
+		break;
+	case 3:
+		allocateBullet(-15);
+		allocateBullet(-10);
+		allocateBullet(-5);
+		allocateBullet(5);
+		allocateBullet(10);
+		allocateBullet(15);
+		break;
+	case 4:
+		allocateBullet(-20);
+		allocateBullet(-15);
+		allocateBullet(-10);
+		allocateBullet(-5);
+		allocateBullet(5);
+		allocateBullet(10);
+		allocateBullet(15);
+		allocateBullet(20); 
+		break;
 	}
 
 	allocateBullet(0.0);
@@ -75,7 +112,7 @@ EntityID BulletSystem::allocateBullet(double angleOffset = 0.0) {
 		static_cast<float>((float)sin((currentAngle + angleOffset) * 0.0174533f)) * BULLET::MOVEMENT_SPEED, false);
 	CollisionSystem::rects[currentID].hitboxScaling = 0.5f;
 	HealthDamageSystem::damages[currentID].damage = 25.0f;
-	HealthDamageSystem::damages[currentID].hardness = 1;
+	HealthDamageSystem::damages[currentID].hardness = currentHard;
 	HealthDamageSystem::damages[currentID].multiplier = 1.0f;
 	return currentID;
 }

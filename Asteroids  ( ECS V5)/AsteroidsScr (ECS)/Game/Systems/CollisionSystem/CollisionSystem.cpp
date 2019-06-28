@@ -31,18 +31,24 @@ void CollisionSystem::checkCollision(const EntityID& id, const char* name) {
 					UFOSystem::powerUps.erase(it.key());
 				}
 				else if (player) {
-					DeathSystem::die();
+					if (!DeathSystem::dead) {
+						DeathSystem::die();
+					}
 				}
 				else if (name == "EnemyBullet" && player) {
-					DeathSystem::die();
+					if (!DeathSystem::dead) {
+						DeathSystem::die();
+					}
 				}
 				else if(name == "Meteor") {
 					while (!meteorDead && !bulletDead) {
 						HealthDamageSystem::attack(it.key(), id);
+						rects[it.key()].angleOfImpact = MovementSystem::positions[id].angle;
+						MovementSystem::velocities[it.key()].dx += cos((MovementSystem::positions[id].angle) * 0.0174533f) * METEOR_::SPEED;
+						MovementSystem::velocities[it.key()].dy += sin((MovementSystem::positions[id].angle) * 0.0174533f) * METEOR_::SPEED;
 
 						if (HealthDamageSystem::healths[it.key()].health <= 0.0f) {
 							meteorHitlist.push_back(it.key());
-							rects[it.key()].angleOfImpact = MovementSystem::positions[id].angle;
 							ScoreSystem::scores[EntityManager::currentVessel].score += MeteorSystem::scoreMeteor(static_cast<MeteorSystem::METEOR>(MeteorSystem::sizes[id].size));
 							MeteorSystem::meteorsOnScreen--;
 							meteorDead = true;
@@ -54,7 +60,7 @@ void CollisionSystem::checkCollision(const EntityID& id, const char* name) {
 					}
 				}
 				else if (name == "UFO" && !((currentMask & COMPONENT_ENEMYBULLET) == COMPONENT_ENEMYBULLET)) {
-					UFOSystem::allocatePowerUp(it.key(), static_cast<UFOSystem::POWERUP>(rand() % 3));
+					UFOSystem::allocatePowerUp(it.key(), static_cast<UFOSystem::POWERUP>(rand() % 4));
 					if (player) {
 						hitlist.push_back(id);
 					}

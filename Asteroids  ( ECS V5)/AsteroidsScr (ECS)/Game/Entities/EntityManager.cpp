@@ -152,4 +152,6 @@ void EntityManager::reset() {
 	DeathSystem::lives = 3;
 	DeathSystem::dead = false;
 	LevelSystem::loadLevel(0);
+	BulletSystem::currentHard = 1;
+	BulletSystem::currentGrapes = 0;
 }

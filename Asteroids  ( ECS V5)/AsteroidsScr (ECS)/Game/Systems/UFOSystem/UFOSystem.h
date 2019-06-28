@@ -5,7 +5,7 @@
 
 class UFOSystem {
 public:
-	enum POWERUP {RAPIDFIRE, GRAPESHOT, INFINITYBULLET};
+	enum POWERUP {RAPIDFIRE, GRAPESHOT, INFINITYBULLET, DMG};
 
 	static void allocateUFO(int x, int y, POWERUP pwr);
 	static void allocatePowerUp(const EntityID& id, POWERUP powerUp);

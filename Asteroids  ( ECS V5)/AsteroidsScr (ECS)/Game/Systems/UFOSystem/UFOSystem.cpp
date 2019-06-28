@@ -32,6 +32,9 @@ void UFOSystem::allocatePowerUp(const EntityID& id, UFOSystem::POWERUP powerUp) 
 	case INFINITYBULLET:
 		num = 100;
 		break;
+	case DMG:
+		num = 150;
+		break;
 	}
 
 	auto& currentID = EntityManager::allocateEntity(stringTmp.str().c_str(), CollisionSystem::rects[id].center[0], CollisionSystem::rects[id].center[1], 20, 20, num, 50, 50, 50, COMPONENT_POWERUP).id;
@@ -47,6 +50,8 @@ void UFOSystem::allocatePowerUp(const EntityID& id, UFOSystem::POWERUP powerUp) 
 	case INFINITYBULLET:
 		powerUpTmp = POWERUP_INFINITYBULLET;
 		break;
+	case DMG:
+		powerUpTmp = POWERUP_DMG;
 	}
 	
 	powerUps[currentID] = powerUpTmp;

@@ -39,7 +39,7 @@ void AISystem::update() {
 				break;
 			}
 
-			if (it.value().state == CHASE && it.value().chaseTimer % 61 == 0) it.value().state = SHOOT;
+			if (it.value().state == CHASE && it.value().chaseTimer % 181 == 0) it.value().state = SHOOT;
 			else if (it.value().state == SHOOT && it.value().shootTimer % 60 == 0) it.value().state = CHASE;
 			break;
 		}

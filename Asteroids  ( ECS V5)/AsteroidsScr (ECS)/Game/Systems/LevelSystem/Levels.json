@@ -30,7 +30,14 @@
   },
   "Level 8": {
     "xlarge-meteor": 4,
-    "small-meteor" : 12
+    "small-meteor": 12
+  },
+  "Level 9": {
+    "medium-meteor": 32,
+    "ufo": 1
+  },
+  "Level 10" : {
+    "ufo":  7
   },
   "Level 1000": {
     "god-meteor": 100
