@@ -1,9 +1,0 @@
-﻿  DeathSystem.cpp
-C:\Users\smart\Desktop\Coding\Finished Projects\Asteroids\Asteroids  ( ECS V5)\AsteroidsScr (ECS)\Game\Systems\DeathSystem\DeathSystem.cpp(36,111): warning C4244:  'argument': conversion from 'Uint64' to 'Uint8', possible loss of data
-C:\Users\smart\Desktop\Coding\Finished Projects\Asteroids\Asteroids  ( ECS V5)\AsteroidsScr (ECS)\Game\Systems\DeathSystem\DeathSystem.cpp(36,64): warning C4244:  'argument': conversion from 'Uint64' to 'Uint8', possible loss of data
-  Generating code
-  2 of 8077 functions (<0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  Asteroids.vcxproj -> C:\Users\smart\Desktop\Coding\Finished Projects\Asteroids\Asteroids  ( ECS V5)\Release\Asteroids.exe
