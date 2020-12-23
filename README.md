@@ -1,5 +1,5 @@
 # Asteroids
-![Asteroids Capture](https://desperationis.github.io/img/project/Asteroids.PNG)
+![Asteroids GIF](Asteroids.gif)
 A fun little game based on the original Asteroids. Features PS4 controller support, a fast hashmap and ECS System, and a few levels.
 
 
