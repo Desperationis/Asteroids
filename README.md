@@ -7,11 +7,9 @@ A fun little game based on the original Asteroids. Features PS4 controller suppo
 
   * MOVEMENT - FWD-Arrow (Throttle) Left-Arrow (Turn Left) Right-Arrow (Turn Right)
   * SHOOT - Space
-  * FIND PLAYER - L-Shift
-  * ADD METEORS - L-TAB
+  * HIGHLIGHT PLAYER - L-Shift
 
 ## Controller controls
 
   * MOVEMENT - Left Analog Stick (turning) L2 (Throttle)
   * SHOOT - X
-  * ADD METEORS - O
