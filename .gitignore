@@ -1,2 +1,6 @@
-
-/.vs/
+*.swp
+build/
+.cache/
+compile_commands.json
+Dependencies/
+executable/
