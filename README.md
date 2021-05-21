@@ -9,6 +9,7 @@ A fun little game based on the original Asteroids. Features PS4 controller suppo
   * MOVEMENT - FWD-Arrow (Throttle) Left-Arrow (Turn Left) Right-Arrow (Turn Right)
   * SHOOT - Space
   * HIGHLIGHT PLAYER - L-Shift
+  * ESC - Exit the program; You can call this whenever, where ever.
 
 ## Controller controls
 
