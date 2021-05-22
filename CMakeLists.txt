@@ -2,9 +2,11 @@ set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
 
 cmake_minimum_required(VERSION 3.5)
 
-project(Guys VERSION 1.0) # Set variable PROJECT_NAME
+project(Asteroids VERSION 1.3.1)
 
-add_executable(output) # Create a executable from main.cpp
+link_directories(${CMAKE_SOURCE_DIR}/Dependencies/SDL_FULL/x86/) # Call before to make sure VS detects it
+
+add_executable(output)
 
 target_include_directories(output 
 		PUBLIC 
@@ -12,11 +14,6 @@ target_include_directories(output
 		./Dependencies/SDL_FULL/include/
 		./Dependencies/json/single_include/nlohmann
 		./Dependencies/hopscotch-map/include/
-		)
-
-link_directories(output
-		PUBLIC
-		./Dependencies/SDL_FULL/x86/
 		)
 
 target_sources(output 
