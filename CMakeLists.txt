@@ -4,7 +4,11 @@ cmake_minimum_required(VERSION 3.5)
 
 project(Asteroids VERSION 1.3.1)
 
-link_directories(${CMAKE_SOURCE_DIR}/Dependencies/SDL_FULL/x86/) # Call before to make sure VS detects it
+if (WIN32)
+	link_directories(${CMAKE_SOURCE_DIR}/Dependencies/SDL_FULL/x86/) # Call before to make sure VS detects it
+endif()
+
+# Unix SDL2 lib should be found automatically
 
 add_executable(output)
 
@@ -49,4 +53,4 @@ target_link_libraries(output
 		SDL2_image
 		SDL2
 		SDL2_ttf
-		)
+	)
