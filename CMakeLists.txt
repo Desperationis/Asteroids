@@ -21,11 +21,17 @@ add_executable(output)
 target_include_directories(output 
 		PUBLIC 
 		./
-		./Dependencies/SDL_FULL/include/
 		./Dependencies/json/single_include/nlohmann
 		./Dependencies/hopscotch-map/include/
-		${SDL2_INCLUDE_DIRS}
 		)
+
+if (WIN32)
+	target_include_directories(output PUBLIC ./Dependencies/SDL_FULL/include)
+endif()
+
+if(UNIX)
+	target_include_directories(output PUBLIC ${SDL2_INCLUDE_DIRS})
+endif()
 
 target_sources(output 
 		PUBLIC 
