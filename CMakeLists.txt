@@ -8,6 +8,12 @@ if (WIN32)
 	link_directories(${CMAKE_SOURCE_DIR}/Dependencies/SDL_FULL/x86/) # Call before to make sure VS detects it
 endif()
 
+
+if(UNIX)
+	find_package(SDL2 REQUIRED)
+endif()
+
+
 # Unix SDL2 lib should be found automatically
 
 add_executable(output)
@@ -18,6 +24,7 @@ target_include_directories(output
 		./Dependencies/SDL_FULL/include/
 		./Dependencies/json/single_include/nlohmann
 		./Dependencies/hopscotch-map/include/
+		${SDL2_INCLUDE_DIRS}
 		)
 
 target_sources(output 
@@ -49,8 +56,7 @@ target_sources(output
 		)
 
 target_link_libraries(output 
-		SDL2main
-		SDL2_image
-		SDL2
 		SDL2_ttf
+		SDL2_image
+		${SDL2_LIBRARIES}
 	)
