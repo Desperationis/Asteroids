@@ -13,14 +13,8 @@ then
 	rm -rf Dependencies
 fi
 
-if [[ -d executable ]]
-then
-	rm -rf executable
-fi
-
 mkdir tmp
 mkdir Dependencies
-mkdir executable
 
 # Install nlohmann/json
 cd tmp
