@@ -46,6 +46,28 @@
     "gigalarge-meteor": 4,
     "ufo" :  2
   },
+  "Level 12": {
+    "small-meteor": 18,
+    "large-meteor": 6,
+    "xlarge-meteor": 9,
+    "gigalarge-meteor": 5
+  },
+  "Level 13": {
+    "gigalarge-meteor": 20,
+    "ufo" :  2
+  },
+  "Level 14": {
+    "god-meteor": 2
+  },
+  "Level 15": {
+    "small-meteor": 420
+  },
+  "Level 16": {
+    "xlarge-meteor": 60,
+    "gigalarge-meteor": 4,
+    "god-meteor": 8,
+    "ufo" :  1
+  },
   "Level 1000": {
     "god-meteor": 1000
   }
