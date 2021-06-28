@@ -68,6 +68,19 @@
     "god-meteor": 8,
     "ufo" :  1
   },
+  "Level 17": {
+    "ufo" :  4
+  },
+  "Level 18": {
+    "small-meteor": 100,
+    "large-meteor": 100,
+    "xlarge-meteor": 100,
+    "gigalarge-meteor": 150,
+    "god-meteor": 10
+  },
+  "Level 19": {
+    "god-meteor": 50
+  },
   "Level 1000": {
     "god-meteor": 1000
   }
