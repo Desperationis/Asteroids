@@ -37,7 +37,7 @@ namespace SPACESHIP
 namespace BULLET
 {
 	const float MOVEMENT_SPEED = 20.0f;
-	const int RAPIDFIRE_TICKS = 3;
+	const int RAPIDFIRE_TICKS = 8;
 	const int RAPIDFIRE_LENGTH = 300;
 	//int HARDNESS = 1;
 	//float DAMAGE = 25.0f;
